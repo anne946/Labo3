@@ -69,11 +69,9 @@ namespace Labo3
                     Matricule = Convert.ToString(m.Text),
                     Nom = Convert.ToString(n.Text),
                     Prenom = Convert.ToString(p.Text),
-                    Description = Convert.ToString(de.Text),
-                    Employe = Convert.ToString(em.Text)
                 };
 
-                GestionBD.getInstance().insererProjet(cc);
+                GestionBD.getInstance().insererEmploye(cc);
 
                 reset();
             }
