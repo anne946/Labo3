@@ -1,0 +1,21 @@
+﻿<Window
+    x:Class="Labo3.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Labo3"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Orientation="Vertical" >
+
+        <CommandBar DefaultLabelPosition="Right">
+            <AppBarButton Icon="Add" x:Name="iAjouter" Label="Ajouter" Click="iAjouter_Click" />
+            <AppBarButton Icon="PostUpdate" x:Name="iAfficher" Label="Afficher" Click="iAfficher_Click" />
+            <AppBarButton Icon="List" x:Name="iRechercher" Label="Rechercher" Click="iRechercher_Click" />
+        </CommandBar>
+
+        <ListView x:Name="lvListe"/>
+        <Frame x:Name="mainFrame"/>
+    </StackPanel>
+</Window>

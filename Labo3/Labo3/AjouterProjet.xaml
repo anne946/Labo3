@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="Labo3.AjouterProjet"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Labo3"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="6*" />
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel Margin="5" HorizontalAlignment="Stretch">
+            <TextBox Header="Numero" x:Name="n" Text="" Grid.Row="0" Grid.Column="1" Margin="5,5,5,10"/>
+            <TextBlock x:Name="ErreurN" FontSize="15" Text="Veuillez entrer un numero" Foreground="red" Visibility="Collapsed"/>
+
+            <TextBox Header="Debut" x:Name="d" Text="" Grid.Row="1" Grid.Column="1" Margin="5,5,5,10"/>
+            <TextBlock x:Name="ErreurD" FontSize="15" Text="Veuillez entrer une date de début" Foreground="red" Visibility="Collapsed"/>
+
+            <TextBox Header="Budget" x:Name="b" Text="" Grid.Row="2" Grid.Column="1" Margin="5,5,5,10"/>
+            <TextBlock x:Name="ErreurB" FontSize="15" Text="Veuillez entrer un budget" Foreground="red" Visibility="Collapsed"/>
+
+            <TextBox Header="Description" x:Name="de" Text="" Grid.Row="3" Grid.Column="1" Margin="5,5,5,10"/>
+            <TextBlock x:Name="ErreurDe" FontSize="15" Text="Veuillez entrer une description" Foreground="red" Visibility="Collapsed"/>
+
+            <TextBox Header="Employe" x:Name="em" Text="" Grid.Row="3" Grid.Column="1" Margin="5,5,5,10"/>
+            <TextBlock x:Name="ErreurE" FontSize="15" Text="Veuillez entrer un employé" Foreground="red" Visibility="Collapsed"/>
+
+            <Button x:Name="myButton" Content="Ajouter" VerticalAlignment="Bottom"  Margin="5,5,5,10" HorizontalAlignment="Center" Click="myButton_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Page>
