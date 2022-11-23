@@ -36,50 +36,39 @@ namespace Labo3
 
             m.Text = " ";
             n.Text = " ";
-            pb.Text = " ";
-            de.Text = " ";
-            em.Text = " ";
+            p.Text = " ";
+           
         }
 
         private void myButton_Click(object sender, RoutedEventArgs e)
         {
             bool valide = true;
 
+            if (m.Text.Trim() == "")
+            {
+                ErreurM.Visibility = Visibility.Visible;
+                valide = false;
+            }
+
             if (n.Text.Trim() == "")
             {
                 ErreurN.Visibility = Visibility.Visible;
                 valide = false;
             }
-
-            if (d.Text.Trim() == "")
+            if (p.Text.Trim() == "")
             {
-                ErreurD.Visibility = Visibility.Visible;
+                ErreurP.Visibility = Visibility.Visible;
                 valide = false;
             }
-            if (b.Text.Trim() == "")
-            {
-                ErreurB.Visibility = Visibility.Visible;
-                valide = false;
-            }
-            if (de.Text.Trim() == "")
-            {
-                ErreurDe.Visibility = Visibility.Visible;
-                valide = false;
-            }
-
-            if (em.Text.Trim() == "")
-            {
-                ErreurE.Visibility = Visibility.Visible;
-                valide = false;
-            }
+           
 
             if (valide == true)
             {
-                Projet cc = new Projet()
+                Employe cc = new Employe()
                 {
-                    Numero = Convert.ToString(n.Text),
-                    Debut = Convert.ToDateTime(d.Text),
-                    Budget = Convert.ToInt32(b.Text),
+                    Matricule = Convert.ToString(m.Text),
+                    Nom = Convert.ToString(n.Text),
+                    Prenom = Convert.ToString(p.Text),
                     Description = Convert.ToString(de.Text),
                     Employe = Convert.ToString(em.Text)
                 };
