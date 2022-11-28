@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -33,6 +34,7 @@ namespace Labo3
             ErreurN.Visibility = Visibility.Collapsed;
             ErreurD.Visibility = Visibility.Collapsed;
             ErreurB.Visibility = Visibility.Collapsed;
+            ErreurBu.Visibility = Visibility.Collapsed;
             ErreurDe.Visibility = Visibility.Collapsed;
             ErreurE.Visibility = Visibility.Collapsed;
 
@@ -52,27 +54,65 @@ namespace Labo3
                 ErreurN.Visibility = Visibility.Visible;
                 valide = false;
             }
+            else
+            {
+                ErreurN.Visibility = Visibility.Collapsed;
+                valide = true;
+            }
 
             if (d.Text.Trim() == "")
             {
                 ErreurD.Visibility = Visibility.Visible;
                 valide = false;
             }
-            if (b.Text.Trim() == "")
+            else
+            {
+                ErreurD.Visibility = Visibility.Collapsed;
+                valide = true;
+            }
+
+            if (b.Text.Trim() == "") 
             {
                 ErreurB.Visibility = Visibility.Visible;
                 valide = false;
             }
+            else
+            {
+                ErreurB.Visibility = Visibility.Collapsed;
+                valide = true;
+            }
+
+            if ((Convert.ToInt32(b.Text) <= 10000) || (Convert.ToInt32(b.Text) > 100000))
+            {
+                ErreurBu.Visibility = Visibility.Visible;
+                valide = false;
+            }
+            else
+            {
+                ErreurBu.Visibility = Visibility.Collapsed;
+                valide = true;
+            }
+
             if (de.Text.Trim() == "")
             {
                 ErreurDe.Visibility = Visibility.Visible;
                 valide = false;
+            }
+            else
+            {
+                ErreurDe.Visibility = Visibility.Collapsed;
+                valide = true;
             }
 
             if (em.Text.Trim() == "")
             {
                 ErreurE.Visibility = Visibility.Visible;
                 valide = false;
+            }
+            else
+            {
+                ErreurE.Visibility = Visibility.Collapsed;
+                valide = true;
             }
 
             if (valide == true)
@@ -89,9 +129,13 @@ namespace Labo3
                 GestionBD.getInstance().insererProjet(cc);
 
                 reset();
+                //mainFrame.Navigate(typeof(MainWindow));
+                
             }
 
+     
 
-        }
+
+    }
     }
 }

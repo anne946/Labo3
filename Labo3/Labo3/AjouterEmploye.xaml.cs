@@ -49,16 +49,31 @@ namespace Labo3
                 ErreurM.Visibility = Visibility.Visible;
                 valide = false;
             }
+            else
+            {
+                ErreurM.Visibility = Visibility.Collapsed;
+                valide = true;
+            }
 
             if (n.Text.Trim() == "")
             {
                 ErreurN.Visibility = Visibility.Visible;
                 valide = false;
             }
+            else
+            {
+                ErreurN.Visibility = Visibility.Collapsed;
+                valide = true;
+            }
             if (p.Text.Trim() == "")
             {
                 ErreurP.Visibility = Visibility.Visible;
                 valide = false;
+            }
+            else
+            {
+                ErreurP.Visibility = Visibility.Collapsed;
+                valide = true;
             }
            
 

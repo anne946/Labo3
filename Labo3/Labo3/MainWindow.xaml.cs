@@ -28,22 +28,32 @@ namespace Labo3
             this.InitializeComponent();
         }
 
-        private void iAfficher_Click(object sender, RoutedEventArgs e)
+        private void iAfficherP_Click(object sender, RoutedEventArgs e)
         {
             lvListe.ItemsSource = GestionBD.getInstance().getProjet();
+            
+        }
+
+        private void iAfficherE_Click(object sender, RoutedEventArgs e)
+        {
             lvListe.ItemsSource = GestionBD.getInstance().getEmploye();
         }
 
 
-        private void iAjouter_Click(object sender, RoutedEventArgs e)
+        private void iAjouterP_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(typeof(AjouterProjet));
+
+        }
+        private void iAjouterE_Click(object sender, RoutedEventArgs e)
         {
 
-
+            mainFrame.Navigate(typeof(AjouterEmploye));
         }
 
         private void iRechercher_Click(object sender, RoutedEventArgs e)
         {
-
+            mainFrame.Navigate(typeof(RechercheE));
         }
     }
 }

@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Labo3
 {
-    internal class Projet
+    internal class Projet : INotifyPropertyChanged
     {
         string numero;
         DateTime debut;
@@ -24,5 +26,10 @@ namespace Labo3
         {
             return numero + " " + debut + " " + budget + " " + description + " " + employe;
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged([CallerMemberName] string propertyName = null) =>
+                this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

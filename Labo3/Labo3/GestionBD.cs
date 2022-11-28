@@ -157,5 +157,44 @@ namespace Labo3
             }
         }
 
+        public ObservableCollection<Employe> rechercheE(string nom)
+        {
+            try
+            {
+                tableE.Clear();
+
+                MySqlCommand commande = new MySqlCommand();
+                commande.Connection = con;
+                commande.CommandText = "Select * from employe Where nom = '" + nom + "'";
+
+                con.Open();
+                MySqlDataReader r = commande.ExecuteReader();
+
+                while (r.Read())
+                {
+
+                    Employe c = new Employe()
+                    {
+                        Matricule = r.GetString("matricule"),
+                        Nom = r.GetString("nom"),
+                        Prenom = r.GetString("prenom")
+                    };
+                    tableE.Add(c);
+                }
+                r.Close();
+                con.Close();
+
+                return tableE;
+            }
+            catch (MySqlException ex)
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                    con.Close();
+                return null;
+            }
+            
+
+        }
+
     }
 }
