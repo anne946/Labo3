@@ -27,5 +27,18 @@ namespace Labo3
         {
             this.InitializeComponent();
         }
+
+       
+
+        private void autoSB_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+           autoSB.ItemsSource =  GestionBD.getInstance().rechercheE(autoSB.Text);
+        }
+
+        private void autoSB_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+        {
+            Employe e = args.SelectedItem as Employe;
+            tblNom.Text = e.Nom;
+        }
     }
 }

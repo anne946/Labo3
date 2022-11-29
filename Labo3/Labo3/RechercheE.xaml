@@ -8,8 +8,9 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <TextBox Header="Numero" x:Name="nom" Text="" Grid.Row="0" Grid.Column="1" Margin="5,5,5,10"/>
-        <Button x:Name="myButton" Content="Ajouter" VerticalAlignment="Bottom"  Margin="5,5,5,10" HorizontalAlignment="Center" Click="myButton_Click"></Button>
-    </Grid>
+    <StackPanel>
+       <AutoSuggestBox x:Name="autoSB" TextChanged="autoSB_TextChanged" SuggestionChosen="autoSB_SuggestionChosen"/>
+        <TextBlock x:Name="tblNom" />
+
+    </StackPanel>
 </Page>
