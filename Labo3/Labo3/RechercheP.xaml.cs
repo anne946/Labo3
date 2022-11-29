@@ -21,24 +21,11 @@ namespace Labo3
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class RechercheE : Page
+    public sealed partial class RechercheP : Page
     {
-        public RechercheE()
+        public RechercheP()
         {
             this.InitializeComponent();
-        }
-
-       
-
-        private void autoSB_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
-        {
-           autoSB.ItemsSource =  GestionBD.getInstance().rechercheE(autoSB.Text);
-        }
-
-        private void autoSB_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
-        {
-            Employe e = args.SelectedItem as Employe;
-            tblNom.Text = e.Nom;
         }
     }
 }

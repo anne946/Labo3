@@ -156,7 +156,7 @@ namespace Labo3
                     con.Close();
             }
         }
-
+        
         public ObservableCollection<Employe> rechercheE(string nom)
         {
             try
