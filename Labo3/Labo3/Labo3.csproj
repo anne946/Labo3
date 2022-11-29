@@ -15,6 +15,7 @@
     <None Remove="AjouterEmploye.xaml" />
     <None Remove="AjouterProjet.xaml" />
     <None Remove="RechercheE.xaml" />
+    <None Remove="RechercheP.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,6 +42,11 @@
   -->
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="RechercheP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="RechercheE.xaml">
