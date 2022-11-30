@@ -196,7 +196,7 @@ namespace Labo3
 
         }
 
-        public ObservableCollection<Projet> rechercheP(DateTime debut)
+        public ObservableCollection<Projet> rechercheP(String debut)
         {
             try
             {
@@ -226,6 +226,45 @@ namespace Labo3
                 con.Close();
 
                 return tableP;
+            }
+            catch (MySqlException ex)
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                    con.Close();
+                return null;
+            }
+
+
+        }
+
+        public ObservableCollection<Employe> selectE()
+        {
+            try
+            {
+                tableE.Clear();
+
+                MySqlCommand commande = new MySqlCommand();
+                commande.Connection = con;
+                commande.CommandText = "Select * from employe";
+
+                con.Open();
+                MySqlDataReader r = commande.ExecuteReader();
+
+                while (r.Read())
+                {
+
+                    Employe c = new Employe()
+                    {
+                        Matricule = r.GetString("matricule"),
+                        Nom = r.GetString("nom"),
+                        Prenom = r.GetString("prenom")
+                    };
+                    tableE.Add(c);
+                }
+                r.Close();
+                con.Close();
+
+                return tableE;
             }
             catch (MySqlException ex)
             {

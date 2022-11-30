@@ -26,17 +26,14 @@ namespace Labo3
         public RechercheP()
         {
             this.InitializeComponent();
+           
+
         }
 
-        private void autoSB_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
-        {
-            //autoSB.ItemsSource = GestionBD.getInstance().rechercheP(autoSB.);
-        }
 
-        private void autoSB_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+        private void myButton_Click(object sender, RoutedEventArgs e)
         {
-            Employe e = args.SelectedItem as Employe;
-            tblDebut.Text = e.Nom;
+            lvListe.ItemsSource = GestionBD.getInstance().rechercheP(debut.Date.Value.ToString("dd MM yyyy"));
         }
-    }
+        }
 }

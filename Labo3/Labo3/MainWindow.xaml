@@ -12,8 +12,8 @@
         <CommandBar DefaultLabelPosition="Right">
             <AppBarButton Icon="Add" x:Name="iAjouterP" Label="Ajouter un Projet" Click="iAjouterP_Click" />
             <AppBarButton Icon="Add" x:Name="iAjouterE" Label="Ajouter un Employé" Click="iAjouterE_Click" />
-            <AppBarButton Icon="PostUpdate" x:Name="iAfficherP" Label="Afficher" Click="iAfficherP_Click" />
-            <AppBarButton Icon="PostUpdate" x:Name="iAfficherE" Label="Afficher" Click="iAfficherE_Click" />
+            <AppBarButton Icon="PostUpdate" x:Name="iAfficherP" Label="Afficher Projet" Click="iAfficherP_Click" />
+            <AppBarButton Icon="PostUpdate" x:Name="iAfficherE" Label="Afficher Employé" Click="iAfficherE_Click" />
             <AppBarButton Icon="List" x:Name="iRechercherE" Label="Rechercher un employé" Click="iRechercherE_Click" />
             <AppBarButton Icon="List" x:Name="iRechercherP" Label="Rechercher un projet" Click="iRechercherP_Click" />
         </CommandBar>

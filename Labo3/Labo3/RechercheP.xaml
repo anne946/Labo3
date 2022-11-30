@@ -10,8 +10,11 @@
 
 
     <StackPanel>
-        <AutoSuggestBox x:Name="autoSB" TextChanged="autoSB_TextChanged" SuggestionChosen="autoSB_SuggestionChosen"/>
-        <TextBlock x:Name="tblDebut" />
+      
+        <ListView x:Name="lvListe"/>
+        <CalendarDatePicker x:Name="debut" PlaceholderText="Pick a date" Header="Calendar" />
+
+        <Button x:Name="myButton" Content="Rechercher" VerticalAlignment="Bottom"  Margin="5,5,5,10" HorizontalAlignment="Center" Click="myButton_Click"></Button>
 
     </StackPanel>
 </Page>

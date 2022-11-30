@@ -36,21 +36,9 @@
             <TextBox Header="Description" x:Name="de" Text="" Grid.Row="3" Grid.Column="1" Margin="5,5,5,10"/>
             <TextBlock x:Name="ErreurDe" FontSize="15" Text="Veuillez entrer une description" Foreground="red" Visibility="Collapsed"/>
 
-            <ListView x:Name="lvListe" >
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="local:Employe">
-                        <StackPanel Orientation="Horizontal"
-                                Margin="5" HorizontalAlignment="Left">
-                            <TextBlock>{x:Bind Matricule}</TextBlock>
-                                <TextBlock>{x:Bind Nom}</TextBlock>
-                                <TextBlock>{x:Bind Prenom}</TextBlock>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            
+            <ComboBox x:Name="select" PlaceholderText="Choisir un employé"/>
+
             <Button x:Name="myButton" Content="Ajouter" VerticalAlignment="Bottom"  Margin="5,5,5,10" HorizontalAlignment="Center" Click="myButton_Click"></Button>
-            <Frame x:Name="mainFrame"/>
 
         </StackPanel>
         

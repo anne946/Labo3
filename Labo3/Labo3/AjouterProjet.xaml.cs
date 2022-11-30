@@ -27,6 +27,7 @@ namespace Labo3
         public AjouterProjet()
         {
             this.InitializeComponent();
+            select.ItemsSource = GestionBD.getInstance().getEmploye();
         }
 
         private void reset()
@@ -46,8 +47,8 @@ namespace Labo3
         private void myButton_Click(object sender, RoutedEventArgs e)
         {
             bool valide = true;
-
-            if (n.Text.Trim() == "")
+            Int32.TryParse(n.Text, out int nu);
+            if (n.Text.Trim() == "" && nu != 0 )
             {
                 ErreurN.Visibility = Visibility.Visible;
                 valide = false;
@@ -69,7 +70,8 @@ namespace Labo3
                 valide = true;
             }
 
-            if (b.Text.Trim() == "") 
+            Int32.TryParse(b.Text, out int bu);
+            if (b.Text.Trim() == "" && bu != 0)
             {
                 ErreurB.Visibility = Visibility.Visible;
                 valide = false;
@@ -80,7 +82,7 @@ namespace Labo3
                 valide = true;
             }
 
-            if ((Convert.ToInt32(b.Text) <= 10000) || (Convert.ToInt32(b.Text) > 100000))
+            if ((bu <= 10000) && (bu > 100000))
             {
                 ErreurBu.Visibility = Visibility.Visible;
                 valide = false;
@@ -102,23 +104,34 @@ namespace Labo3
                 valide = true;
             }
 
-         
+            Employe employe = select.SelectedItem as Employe;
+
+            if (select.SelectedIndex == -1)
+            {
+                valide = false;
+            }
+            else
+            {
+
+                valide = true;
+            }
 
             if (valide == true)
             {
+
                 Projet cc = new Projet()
                 {
                     Numero = Convert.ToString(n.Text),
                     Debut = Convert.ToDateTime(d.Text),
                     Budget = Convert.ToInt32(b.Text),
-                    Description = Convert.ToString(de.Text),
+                    Description = Convert.ToString(d.Text),
+                    Employe = Convert.ToString(employe.Matricule),
+
                 };
 
                 GestionBD.getInstance().insererProjet(cc);
 
-                reset();
-                //mainFrame.Navigate(typeof(MainWindow));
-                
+                reset();                
             }
 
      
