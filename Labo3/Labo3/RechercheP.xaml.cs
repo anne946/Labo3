@@ -30,7 +30,7 @@ namespace Labo3
 
         private void autoSB_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {
-            autoSB.ItemsSource = GestionBD.getInstance().rechercheP(autoSB.);
+            //autoSB.ItemsSource = GestionBD.getInstance().rechercheP(autoSB.);
         }
 
         private void autoSB_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
