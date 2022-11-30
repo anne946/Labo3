@@ -36,13 +36,11 @@ namespace Labo3
             ErreurB.Visibility = Visibility.Collapsed;
             ErreurBu.Visibility = Visibility.Collapsed;
             ErreurDe.Visibility = Visibility.Collapsed;
-            ErreurE.Visibility = Visibility.Collapsed;
 
             n.Text = " ";
             d.Text = " ";
             b.Text = " ";
             de.Text = " ";
-            em.Text = " ";
         }
 
         private void myButton_Click(object sender, RoutedEventArgs e)
@@ -104,16 +102,7 @@ namespace Labo3
                 valide = true;
             }
 
-            if (em.Text.Trim() == "")
-            {
-                ErreurE.Visibility = Visibility.Visible;
-                valide = false;
-            }
-            else
-            {
-                ErreurE.Visibility = Visibility.Collapsed;
-                valide = true;
-            }
+         
 
             if (valide == true)
             {
@@ -123,7 +112,6 @@ namespace Labo3
                     Debut = Convert.ToDateTime(d.Text),
                     Budget = Convert.ToInt32(b.Text),
                     Description = Convert.ToString(de.Text),
-                    Employe = Convert.ToString(em.Text)
                 };
 
                 GestionBD.getInstance().insererProjet(cc);

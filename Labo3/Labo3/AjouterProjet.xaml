@@ -23,7 +23,6 @@
 
 
         <StackPanel Margin="5" HorizontalAlignment="Stretch">
-            <ListView x:Name="lvListe"/>
             <TextBox Header="Numero" x:Name="n" Text="" Grid.Row="0" Grid.Column="1" Margin="5,5,5,10"/>
             <TextBlock x:Name="ErreurN" FontSize="15" Text="Veuillez entrer un numero" Foreground="red" Visibility="Collapsed"/>
 
@@ -37,27 +36,22 @@
             <TextBox Header="Description" x:Name="de" Text="" Grid.Row="3" Grid.Column="1" Margin="5,5,5,10"/>
             <TextBlock x:Name="ErreurDe" FontSize="15" Text="Veuillez entrer une description" Foreground="red" Visibility="Collapsed"/>
 
-            <TextBox Header="Employe" x:Name="em" Text="" Grid.Row="3" Grid.Column="1" Margin="5,5,5,10"/>
-            <TextBlock x:Name="ErreurE" FontSize="15" Text="Veuillez entrer un employé" Foreground="red" Visibility="Collapsed"/>
-
-            <ListView x:Name="lvListe" ItemsSource="{x:Bind tableE}">
+            <ListView x:Name="lvListe" >
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="local:Employe">
                         <StackPanel Orientation="Horizontal"
                                 Margin="5" HorizontalAlignment="Left">
-                            <ComboBox x:Name="employe"  Header="Employés">
-                                <x:String>{x:Bind Matricule}</x:String>
-                                <x:String>{x:Bind Nom}</x:String>
-                                <x:String>{x:Bind Prenom}</x:String>
-                            </ComboBox>
+                            <TextBlock>{x:Bind Matricule}</TextBlock>
+                                <TextBlock>{x:Bind Nom}</TextBlock>
+                                <TextBlock>{x:Bind Prenom}</TextBlock>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
             
             <Button x:Name="myButton" Content="Ajouter" VerticalAlignment="Bottom"  Margin="5,5,5,10" HorizontalAlignment="Center" Click="myButton_Click"></Button>
+            <Frame x:Name="mainFrame"/>
 
-            
         </StackPanel>
         
     </Grid>
