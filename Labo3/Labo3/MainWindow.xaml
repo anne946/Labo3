@@ -14,7 +14,8 @@
             <AppBarButton Icon="Add" x:Name="iAjouterE" Label="Ajouter un Employé" Click="iAjouterE_Click" />
             <AppBarButton Icon="PostUpdate" x:Name="iAfficherP" Label="Afficher" Click="iAfficherP_Click" />
             <AppBarButton Icon="PostUpdate" x:Name="iAfficherE" Label="Afficher" Click="iAfficherE_Click" />
-            <AppBarButton Icon="List" x:Name="iRechercher" Label="Rechercher" Click="iRechercher_Click" />
+            <AppBarButton Icon="List" x:Name="iRechercherE" Label="Rechercher un employé" Click="iRechercherE_Click" />
+            <AppBarButton Icon="List" x:Name="iRechercherP" Label="Rechercher un projet" Click="iRechercherP_Click" />
         </CommandBar>
 
         <ListView x:Name="lvListe"/>

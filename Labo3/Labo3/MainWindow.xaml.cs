@@ -30,13 +30,13 @@ namespace Labo3
 
         private void iAfficherP_Click(object sender, RoutedEventArgs e)
         {
-            lvListe.ItemsSource = GestionBD.getInstance().getProjet();
-            
+            mainFrame.Navigate(typeof(AfficherP));
+
         }
 
         private void iAfficherE_Click(object sender, RoutedEventArgs e)
         {
-            lvListe.ItemsSource = GestionBD.getInstance().getEmploye();
+            mainFrame.Navigate(typeof(AfficherE));
         }
 
 
@@ -51,9 +51,14 @@ namespace Labo3
             mainFrame.Navigate(typeof(AjouterEmploye));
         }
 
-        private void iRechercher_Click(object sender, RoutedEventArgs e)
+        private void iRechercherE_Click(object sender, RoutedEventArgs e)
         {
             mainFrame.Navigate(typeof(RechercheE));
+        }
+
+        private void iRechercherP_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(typeof(RechercheP));
         }
     }
 }

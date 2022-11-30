@@ -23,6 +23,7 @@
 
 
         <StackPanel Margin="5" HorizontalAlignment="Stretch">
+            <ListView x:Name="lvListe"/>
             <TextBox Header="Numero" x:Name="n" Text="" Grid.Row="0" Grid.Column="1" Margin="5,5,5,10"/>
             <TextBlock x:Name="ErreurN" FontSize="15" Text="Veuillez entrer un numero" Foreground="red" Visibility="Collapsed"/>
 
@@ -38,9 +39,8 @@
 
             <TextBox Header="Employe" x:Name="em" Text="" Grid.Row="3" Grid.Column="1" Margin="5,5,5,10"/>
             <TextBlock x:Name="ErreurE" FontSize="15" Text="Veuillez entrer un employé" Foreground="red" Visibility="Collapsed"/>
-            <Button x:Name="myButton" Content="Ajouter" VerticalAlignment="Bottom"  Margin="5,5,5,10" HorizontalAlignment="Center" Click="myButton_Click"></Button>
 
-            <!--<ListView x:Name="lvListe" ItemsSource="{x:Bind tableE}">
+            <ListView x:Name="lvListe" ItemsSource="{x:Bind tableE}">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="local:Employe">
                         <StackPanel Orientation="Horizontal"
@@ -53,7 +53,11 @@
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>-->
+            </ListView>
+            
+            <Button x:Name="myButton" Content="Ajouter" VerticalAlignment="Bottom"  Margin="5,5,5,10" HorizontalAlignment="Center" Click="myButton_Click"></Button>
+
+            
         </StackPanel>
         
     </Grid>

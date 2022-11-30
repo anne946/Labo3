@@ -196,5 +196,46 @@ namespace Labo3
 
         }
 
+        public ObservableCollection<Projet> rechercheP(DateTime debut)
+        {
+            try
+            {
+                tableE.Clear();
+
+                MySqlCommand commande = new MySqlCommand();
+                commande.Connection = con;
+                commande.CommandText = "Select * from projet Where debut = '" + debut + "'";
+
+                con.Open();
+                MySqlDataReader r = commande.ExecuteReader();
+
+                while (r.Read())
+                {
+
+                    Projet c = new Projet()
+                    {
+                        Numero = r.GetString("numero"),
+                        Debut = r.GetDateTime("debut"),
+                        Budget = r.GetInt32("budget"),
+                        Description = r.GetString("description"),
+                        Employe = r.GetString("employe")
+                    };
+                    tableP.Add(c);
+                }
+                r.Close();
+                con.Close();
+
+                return tableP;
+            }
+            catch (MySqlException ex)
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                    con.Close();
+                return null;
+            }
+
+
+        }
+
     }
 }
